@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitCore Gym</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">FitCore Gym</h1>
+      <nav>
+        <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#programs" class="nav-link">Programs</a></li>
+          <li><a href="#trainers" class="nav-link">Trainers</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h2>Unleash Your Inner Beast</h2>
+        <p>Elite training programs. Premium facilities. Total transformation.</p>
+        <a href="#contact" class="btn">Join Now</a>
+      </div>
+    </section>
+
+    <section id="programs" class="programs">
+        <h2>Our Programs</h2>
+        <div class="program-cards">
+          
+          <div class="program-card">
+            <img src="Images/strength.jpg" alt="Strength Training">
+            <h3>Strength Training</h3>
+            <p>Build muscle, improve posture, and gain raw power with our strength-based programs.</p>
+          </div>
+      
+          <div class="program-card">
+            <img src="Images/Cardio.jpg" alt="Cardio Blast">
+            <h3>Cardio Blast</h3>
+            <p>Burn fat and boost stamina with high-energy cardio sessions including HIIT and cycling.</p>
+          </div>
+      
+          <div class="program-card">
+            <img src="Images/Yoga..jpg" alt="Yoga & Flexibility">
+            <h3>Yoga & Flexibility</h3>
+            <p>Enhance your mobility and mindfulness through our beginner-to-advanced yoga classes.</p>
+          </div>
+      
+          <div class="program-card">
+            <img src="Images/Boxing.jpg" alt="Boxing">
+            <h3>Boxing & Combat</h3>
+            <p>Learn the art of self-defense while improving speed, power, and mental focus.</p>
+          </div>
+      
+          <div class="program-card">
+            <img src="Images/weight_training.jpg" alt="CrossFit Challenge">
+            <h3>CrossFit Challenge</h3>
+            <p>Join the revolution of functional fitness with our intense CrossFit-style workouts.</p>
+          </div>
+      
+          <div class="program-card">
+            <img src="Images/Gym.jpg" alt="Personal Training">
+            <h3>1-on-1 Personal Training</h3>
+            <p>Work closely with certified trainers to hit your fitness goals faster and smarter.</p>
+          </div>
+      
+        </div>
+      </section>
+      
+      <section id="trainers" class="trainers">
+        <h2>Our Trainers</h2>
+        <div class="trainer-grid">
+          
+          <div class="trainer-card">
+            <img src="Images/Trainer1.jpg" alt="Trainer 1">
+            <p>📞 +91 98765 43210</p>
+          </div>
+      
+          <div class="trainer-card">
+            <img src="Images/trainer2.jpg" alt="Trainer 2">
+            <p>📞 +91 91234 56789</p>
+          </div>
+      
+        </div>
+      </section>
+      
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FitCore Gym. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('.nav-link, .btn').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Sticky header shadow on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled'
